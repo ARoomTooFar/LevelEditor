@@ -1,5 +1,13 @@
 ﻿#pragma strict
 
+
+/*
+ * This class is adding the OpenGUI menu item to the unity Editor Menu BitArray
+ *
+ * Selecting an item from this bar adds an object to the Scene Hierarchy.
+ * This is how the "in-game" Level Editor GUI is built. 
+ * Be careful using these. Undo points don't appear to be set up for them, so ctrl+z won't remove wayward objects -EA 
+ */
 public class OGMenuItems extends MonoBehaviour {
 	// Helper functions
 	private static function PlaceObject ( go : GameObject, scale : Vector3 ) {

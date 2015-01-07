@@ -1,7 +1,17 @@
 ﻿#pragma strict
 
+// Declares this as the Unity Inspector for the OEWorkspace class
+// (firstpass/Plugins/OpenEd/Scripts/OEWorkspace.js?)
 @CustomEditor ( OEWorkspace )
 public class OEWorkspaceInspector extends Editor {
+	
+	/*
+	 * Unity Editor Inspector for OEWorkspace
+	 * 
+	 * I think this is the empty inspector panel in the Workspace object.
+	 * Unsure why it's empty. It might require objects to have been placed in the sceen?
+	 * It seems to need "Preferred Parents" in the OEWorkspace, but I'm not sure what those are -EA
+	 */
 	override function OnInspectorGUI () {
 		var workspace : OEWorkspace = target as OEWorkspace;
 
