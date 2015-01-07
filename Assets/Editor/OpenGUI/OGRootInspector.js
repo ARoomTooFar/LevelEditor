@@ -1,8 +1,12 @@
 #pragma strict
 
+// Declares this as the Unity Inspector for the OGRoot class
+// (firstpass/Plugins/OpenGUI/Scripts/OGRoot.js?)
+// Viewable on Hierarchy Panel, UI
 @CustomEditor ( OGRoot )
 @InitializeOnLoad
 public class OGRootInspector extends Editor {
+	//Private Contructor?
 	private static function OGRootInspector () {
 		OGRoot.EditorSelectWidget = function ( w : OGWidget, additive : boolean ) {
 			if ( !w ) {
@@ -34,6 +38,7 @@ public class OGRootInspector extends Editor {
 		};
 	}
 	
+	//Inspector Panel
 	override function OnInspectorGUI () {
 		var root : OGRoot = target as OGRoot;
 	
@@ -43,6 +48,7 @@ public class OGRootInspector extends Editor {
 			};
 		}
 		
+		//Unsure what this line of code does. There should always be a root? -EA
 		if ( !root ) { return; }
 		
 		DrawDefaultInspector ();

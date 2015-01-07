@@ -21,6 +21,12 @@ public class OEBrush {
 	public var randomize : float;
 }
 
+/*
+ *Object to store changes for undoes.
+ *
+ *Currently cannot work. Old object and new object are identical.
+ *Unsure how to get this to undo creating an object. -EA
+ */
 public class OEUndoAction {
 	public var oldGO : GameObject;
 	public var newGO : GameObject;

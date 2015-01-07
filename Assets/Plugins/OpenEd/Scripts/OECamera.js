@@ -45,8 +45,11 @@ public class OECamera extends MonoBehaviour {
 		return bounds;
 	}
 
+	//Draws the grid seen in-game.
 	private function DrawGrid () {
+		//Get the camera's focus point from the workspace. Unused?
 		var focus : Vector3 = OEWorkspace.GetInstance().GetFocus ();
+		//variable for grid dimensions. Grid extends 2*distance by 2*distance centered on 0,0 at y=0
 		var distance : int = 100;
 
 		GL.Begin ( GL.LINES );
@@ -66,6 +69,7 @@ public class OECamera extends MonoBehaviour {
 		GL.End ();
 	}
 
+	//Draws a box around each selected object based on their Collider bounds.
 	private function DrawSelection () {
 		GL.Begin ( GL.QUADS );
 
@@ -125,6 +129,7 @@ public class OECamera extends MonoBehaviour {
 		GL.End ();
 	}
 
+	//Draws the white Plus cursor
 	private function DrawCursor () {
 		var point : Vector3 = OEWorkspace.GetInstance().GetFocus ();
 		var size : float = Vector3.Distance ( this.transform.position, point ) * 0.01;
@@ -142,6 +147,7 @@ public class OECamera extends MonoBehaviour {
 		GL.End ();
 	}
 	
+	//Draws a symbol at points where an Audio Source is located
 	private function DrawAudioSources () {
 		GL.Begin ( GL.QUADS );
 		materials.audioSource.SetPass ( 0 );
@@ -170,6 +176,7 @@ public class OECamera extends MonoBehaviour {
 		GL.End ();
 	}
 
+	//Draws an icon where lights are located
 	private function DrawLights () {
 		GL.Begin ( GL.QUADS );
 		materials.light.SetPass ( 0 );
@@ -238,6 +245,7 @@ public class OECamera extends MonoBehaviour {
 		GL.PopMatrix ();
 	}
 
+	//This will need to be heavily altered to lock down the camera movement
 	public function Update () {
 		if ( OGRoot.GetInstance() && OGRoot.GetInstance().currentPage.name == "Home" ) {
 			var focus : Vector3 = OEWorkspace.GetInstance().GetFocus ();
