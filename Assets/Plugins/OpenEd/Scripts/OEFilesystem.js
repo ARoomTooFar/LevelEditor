@@ -71,12 +71,12 @@ public class OEFolder {
 public class OEFileSystem {
 	public static function GetFiles ( path : String ) : FileInfo [] {
 		var info : DirectoryInfo = new DirectoryInfo ( path );
-		//return info.GetFiles ();
+		return info.GetFiles ();
 	}
 
 	public static function GetFolders ( path : String ) : DirectoryInfo [] {
 		var info : DirectoryInfo = new DirectoryInfo ( path );
-		//return info.GetDirectories ();
+		return info.GetDirectories ();
 	}
 
 	public static function GetResources ( path : String, type : System.Type ) : Object[] {

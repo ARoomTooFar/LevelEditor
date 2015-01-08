@@ -10,7 +10,7 @@ public class OFWriter {
 			var sw : StreamWriter;
 			
 			if ( !File.Exists ( path ) ) {
-				//sw = File.CreateText ( path );
+				sw = File.CreateText ( path );
 			} else {
 				sw = new StreamWriter ( path );
 			}
